@@ -38,8 +38,6 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 	# Handle the left mouse button (fire) event
 	if Input.is_action_just_pressed("fire") and reload_finished:
-		print("U pressed me!")
-		print("ammo is" + str(ammo) + "and shots are" + str(shots))
 		if ammo != 0:
 			animplayer.stop()
 			animplayer.play("attachment_vm_pi_papa320_mag_skeleton|fire1")
@@ -77,9 +75,7 @@ func _physics_process(delta):
 
 
 func _on_animation_player_animation_started(anim_name):
-	if anim_name == "attachment_vm_pi_papa320_mag_skeleton|fire1":
-		print("I started playing")
-	elif anim_name == "" and not is_moving:
+	if anim_name == "" and not is_moving:
 		stop_walking = true
 	elif anim_name == "attachment_vm_pi_papa320_mag_skeleton|reload_empty":
 		reload_finished = false
@@ -91,9 +87,7 @@ func _on_animation_player_animation_started(anim_name):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "attachment_vm_pi_papa320_mag_skeleton|fire1":
-		print("I finished playing")
-	elif anim_name == "attachment_vm_pi_papa320_mag_skeleton|reload_empty":
+	if anim_name == "attachment_vm_pi_papa320_mag_skeleton|reload_empty":
 		reload_finished = true
 
 func reload():
