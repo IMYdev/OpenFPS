@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6lk3pmledujg"]
+
+[ext_resource type="FontFile" uid="uid://bn48v2mdby7nf" path="res://assets/Ubuntu-M.ttf" id="1_0h8iq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8ecm"]
+bg_color = Color(0.517647, 0.556863, 0.94902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.517647, 0.517647, 0.517647, 0.843137)
+shadow_size = 5
+shadow_offset = Vector2(3, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uic74"]
+bg_color = Color(0.486275, 0.588235, 0.992157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.517647, 0.517647, 0.517647, 0.843137)
+shadow_size = 5
+shadow_offset = Vector2(3, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iecvm"]
+bg_color = Color(0.486275, 0.454902, 0.870588, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.517647, 0.517647, 0.517647, 0.843137)
+shadow_size = 2
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq3ai"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 57.0
+offset_right = 736.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("1_0h8iq")
+theme_override_font_sizes/font_size = 50
+text = "OpenFPS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 279.0
+offset_right = 736.0
+offset_bottom = 353.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8ecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uic74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iecvm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lq3ai")
+text = "Play"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 402.0
+offset_right = 736.0
+offset_bottom = 476.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8ecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uic74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iecvm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lq3ai")
+text = "	Quit"

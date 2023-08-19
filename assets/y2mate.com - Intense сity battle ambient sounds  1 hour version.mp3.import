@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsyye5b5hvnld"
+path="res://.godot/imported/y2mate.com - Intense сity battle ambient sounds  1 hour version.mp3-8170c577b6879c3898bcadb584f1e1dc.mp3str"
+
+[deps]
+
+source_file="res://assets/y2mate.com - Intense сity battle ambient sounds  1 hour version.mp3"
+dest_files=["res://.godot/imported/y2mate.com - Intense сity battle ambient sounds  1 hour version.mp3-8170c577b6879c3898bcadb584f1e1dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
