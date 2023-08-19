@@ -9,3 +9,7 @@
 By using OpenFPS, you can save yourself a significant amount of time and effort in building your own FPS game.
 
 OpenFPS is still under development, but it is a valuable resource for anyone who wants to build an FPS game in Godot.
+
+# Demo:
+
+![demo](https://github.com/IMYdev/OpenFPS/assets/121319594/e98e687e-6612-4a99-8cbc-22c1760f04b8)
