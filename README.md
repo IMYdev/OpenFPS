@@ -1,5 +1,5 @@
 # OpenFPS
- OpenFPS is a project that aims to help people build first-person shooter (FPS) games in Godot, as this field is lacking interest around the godot comuunity
+ OpenFPS is a project that aims to help people build first-person shooter (FPS) games in Godot, as this field is lacking interest around the godot comuunity.
 # Features:
  1. Basic FPS character controller.
  2. Weapon system that supports only a gun as of now.
