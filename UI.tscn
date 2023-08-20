@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://i1xsfxvo8ctf"]
+
+[ext_resource type="Script" path="res://UI.gd" id="1_sxsfn"]
+[ext_resource type="Texture2D" uid="uid://crc6twp0rgprx" path="res://assets/ammo.png" id="1_to6pr"]
+[ext_resource type="Texture2D" uid="uid://6i2c06kqgnao" path="res://assets/bullet.png" id="2_0rfxh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sxsfn")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(60, 612)
+scale = Vector2(0.1875, 0.2)
+texture = ExtResource("1_to6pr")
+
+[node name="Bullet" type="Sprite2D" parent="Background"]
+position = Vector2(-254, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
+
+[node name="Bullet2" type="Sprite2D" parent="Background"]
+position = Vector2(-167.805, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
+
+[node name="Bullet3" type="Sprite2D" parent="Background"]
+position = Vector2(-81.6094, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
+
+[node name="Bullet4" type="Sprite2D" parent="Background"]
+position = Vector2(4.58588, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
+
+[node name="Bullet5" type="Sprite2D" parent="Background"]
+position = Vector2(90.7811, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
+
+[node name="Bullet6" type="Sprite2D" parent="Background"]
+position = Vector2(176.976, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
+
+[node name="Bullet7" type="Sprite2D" parent="Background"]
+position = Vector2(263.172, -5.05566)
+scale = Vector2(3.33333, 2.38889)
+texture = ExtResource("2_0rfxh")
