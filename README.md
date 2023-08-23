@@ -16,3 +16,9 @@ OpenFPS is still under development, but it is a valuable resource for anyone who
 # Demo:
 
 ![demo](https://github.com/IMYdev/OpenFPS/blob/main/demo.gif)
+
+# Attention to detail:
+Bullets, full vs empty:
+
+![full](https://github.com/IMYdev/OpenFPS/blob/main/full.png)
+![empty](https://github.com/IMYdev/OpenFPS/blob/main/empty.png)
