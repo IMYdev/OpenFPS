@@ -4,7 +4,10 @@
  1. Basic FPS character controller.
  2. Weapon system that supports only a gun as of now.
  3. Reloading mechanism that works.
- 4. An open enivronment for future contributions.
+ 4. An enemy.
+ 5. Hitscan weapon mechanisem.
+ 6. HUD showing remaining bullets.
+ 7. An open enivronment for future contributions.
  
 By using OpenFPS, you can save yourself a significant amount of time and effort in building your own FPS game.
 
@@ -12,4 +15,4 @@ OpenFPS is still under development, but it is a valuable resource for anyone who
 
 # Demo:
 
-![demo](https://github.com/IMYdev/OpenFPS/assets/121319594/e98e687e-6612-4a99-8cbc-22c1760f04b8)
+![demo](https://github.com/IMYdev/OpenFPS/blob/main/demo.gif)
