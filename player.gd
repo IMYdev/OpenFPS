@@ -5,8 +5,9 @@ const SPEED = 10.0
 const JUMP_VELOCITY = 5
 const mouse_sensitivity = 0.002
 
+@export var toggleADS: bool = false
 @onready var main = $"../main"
-
+@onready var animplayer: AnimationPlayer = $"../CharacterBody3D/Camera3D/pistol/animplayer"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -34,6 +35,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("reload"):
 		main.reload()
 	if Input.is_action_just_pressed("ads"):
+		main.ads_func()
+	if not Input.is_action_pressed("ads") and not toggleADS and main.ads:
 		main.ads_func()
 	if Input.is_action_just_pressed("inspect"):
 		main.draw()
