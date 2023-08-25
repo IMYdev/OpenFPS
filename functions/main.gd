@@ -22,21 +22,6 @@ var ads = false
 var reload_finished = true
 var inspecting = false
 
-func _on_thing_animation_started(anim_name):
-	if anim_name == reload_animation:
-		reload_finished = false
-	elif anim_name == draw_animation or anim_name == draw_empty_animation:
-		inspecting = true
-
-
-
-
-func _on_thing_animation_finished(anim_name):
-	if anim_name == reload_animation:
-		reload_finished = true
-	elif anim_name == draw_animation or anim_name == draw_empty_animation:
-		inspecting = false
-
 
 func shoot():
 	if reload_finished and not inspecting:
@@ -49,7 +34,6 @@ func shoot():
 			if aimcast.is_colliding():
 				target = aimcast.get_collider()
 				if target.is_in_group("enemy"):
-					print("hit enemy")
 					target.health -= damage
 		if ammo == 0:
 			dryFireSound.playing = true
@@ -57,13 +41,13 @@ func shoot():
 		pass
 
 func reload():
-	if ammo == 0:
+	if inspecting:
+		pass
+	elif ammo == 0:
 		animplayer.play(reload_animation)
 		ammo += 7
 		shots = 0
 	elif ammo == 7:
-		pass
-	elif inspecting:
 		pass
 	else:
 		animplayer.play(reload_animation)
@@ -80,12 +64,13 @@ func draw():
 		pass
 	elif !reload_finished:
 		pass
-	elif ammo == 0:
-		animplayer.stop()
-		animplayer.play(draw_empty_animation)
 	else:
-		animplayer.stop()
-		animplayer.play(draw_animation)
+		if ammo == 0:
+			animplayer.stop()
+			animplayer.play(draw_empty_animation)
+		else:
+			animplayer.stop()
+			animplayer.play(draw_animation)
 
 func ads_func():
 	if ads and reload_finished:
@@ -98,3 +83,18 @@ func ads_func():
 	else:
 		ads = true
 		animplayer.play(ads_animation)
+
+
+func _on_animplayer_animation_finished(anim_name):
+	if anim_name == reload_animation:
+		reload_finished = true
+	elif anim_name == draw_animation or anim_name == draw_empty_animation:
+		inspecting = false
+
+
+
+func _on_animplayer_animation_started(anim_name):
+	if anim_name == reload_animation:
+		reload_finished = false
+	elif anim_name == draw_animation or anim_name == draw_empty_animation:
+		inspecting = true
