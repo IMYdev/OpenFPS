@@ -24,7 +24,8 @@ Bullets, full vs empty:
 ![empty](https://github.com/IMYdev/OpenFPS/blob/main/empty.png)
 
 # LICENSING:
-Everything is licensed under MIT License except the fps hands, they're licensed under [Creative Commons (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+Code is licensed under MIT License
+All assets are licensed under [Creative Commons (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
 # Crediting:
 Crediting this project isn't required but is highly appreciated
