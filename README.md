@@ -30,6 +30,3 @@ All assets are licensed under [Creative Commons (CC BY 4.0)](https://creativecom
 
 # Crediting:
 Crediting this project isn't required but is highly appreciated
-
-# Help me:
-I'm currently in desparate need of a 3D Artist, this game can't continue without one
