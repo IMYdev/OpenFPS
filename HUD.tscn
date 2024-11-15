@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3krorfu6shx0"]
+
+[ext_resource type="Script" path="res://circleHUD.gd" id="1_txugf"]
+[ext_resource type="Texture2D" uid="uid://bwfhe8aqr2y5t" path="res://assets/HUD.png" id="2_knejg"]
+[ext_resource type="Texture2D" uid="uid://bh52gfo1v3adn" path="res://assets/HUD2.png" id="4_3mw1a"]
+
+[sub_resource type="Animation" id="Animation_a3o56"]
+resource_name = "HUD"
+
+[sub_resource type="Animation" id="Animation_fi0ft"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0tf3"]
+_data = {
+"HUD": SubResource("Animation_a3o56"),
+"RESET": SubResource("Animation_fi0ft")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txugf")
+
+[node name="Hud" type="Sprite2D" parent="."]
+position = Vector2(552, 367)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_knejg")
+
+[node name="Hud2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(552, 367)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_3mw1a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 332.0
+offset_right = 559.0
+offset_bottom = 464.0
+rotation = -0.729548
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Nuke lol"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c0tf3")
+}
+
+[connection signal="mouse_entered" from="Label" to="." method="_on_label_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="." method="_on_label_mouse_exited"]

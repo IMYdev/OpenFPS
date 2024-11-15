@@ -12,6 +12,8 @@ var ads_animation:String = "ads"
 @onready var firesound = $"../CharacterBody3D/firesound"
 @onready var dryFireSound = $"../CharacterBody3D/dryFireSound"
 @onready var aimcast = $"../CharacterBody3D/Camera3D/RayCast3D"
+@onready var nuke_animplayer = $"../AnimationPlayer"
+
 
 
 var ammo = 7
@@ -21,68 +23,98 @@ var shots = 0
 var ads = false
 var reload_finished = true
 var inspecting = false
+var is_nuke = false
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func nuke():
+	if ads:
+		animplayer.play_backwards(ads_animation)
+		nuke_animplayer.play("tablet")
+		is_nuke = true
+	else:
+		nuke_animplayer.play("tablet")
+		is_nuke = true
 
 func shoot():
-	if reload_finished and not inspecting:
-		if ammo != 0:
-			animplayer.stop()
-			animplayer.play(fire_animation)
-			firesound.playing = true
-			shots += 1
-			ammo -= 1
-			if aimcast.is_colliding():
-				target = aimcast.get_collider()
-				if target.is_in_group("enemy"):
-					target.health -= damage
-		if ammo == 0:
-			dryFireSound.playing = true
-	else:
+	if is_nuke:
 		pass
+	else:
+		if reload_finished and not inspecting:
+			if ammo != 0:
+				animplayer.stop()
+				animplayer.play(fire_animation)
+				firesound.playing = true
+				shots += 1
+				ammo -= 1
+				if aimcast.is_colliding():
+					target = aimcast.get_collider()
+					if target.is_in_group("enemy"):
+						target.health -= damage
+			if ammo == 0:
+				dryFireSound.playing = true
+		else:
+			pass
 
 func reload():
-	if inspecting:
-		pass
-	elif ammo == 0:
-		animplayer.play(reload_animation)
-		ammo += 7
-		shots = 0
-	elif ammo == 7:
+	if is_nuke:
 		pass
 	else:
-		animplayer.play(reload_animation)
-		ammo += shots
-		shots = 0
+		if inspecting:
+			pass
+		elif ammo == 0:
+			animplayer.play(reload_animation)
+			ammo += 7
+			shots = 0
+		elif ammo == 7:
+			pass
+		else:
+			animplayer.play(reload_animation)
+			ammo += shots
+			shots = 0
 
 func idle():
-	if animplayer.is_playing() == false:
-		animplayer.play(idle_animation)
+	if is_nuke:
+		pass
+	else:
+		if animplayer.is_playing() == false:
+			animplayer.play(idle_animation)
 
 
 func draw():
-	if ads:
+	if is_nuke:
 		pass
-	elif !reload_finished:
-		pass
-	else:
-		if ammo == 0:
-			animplayer.stop()
-			animplayer.play(draw_empty_animation)
+	else:	
+		if ads:
+			pass
+		elif !reload_finished:
+			pass
 		else:
-			animplayer.stop()
-			animplayer.play(draw_animation)
+			if ammo == 0:
+				animplayer.stop()
+				animplayer.play(draw_empty_animation)
+			else:
+				animplayer.stop()
+				animplayer.play(draw_animation)
 
 func ads_func():
-	if ads and reload_finished:
-		ads = false
-		animplayer.play_backwards(ads_animation)
-	elif ads and not reload_finished or inspecting:
-		pass
-	elif not ads and not reload_finished or inspecting:
+	if is_nuke:
 		pass
 	else:
-		ads = true
-		animplayer.play(ads_animation)
+		if ads and reload_finished:
+			ads = false
+			animplayer.play_backwards(ads_animation)
+		elif ads and not reload_finished or inspecting:
+			pass
+		elif not ads and not reload_finished or inspecting:
+			pass
+		else:
+			ads = true
+			animplayer.play(ads_animation)
 
 
 func _on_animplayer_animation_finished(anim_name):

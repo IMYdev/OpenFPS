@@ -1,0 +1,14 @@
+AudioStreamPlayer
+VideoStreamPlayer
+AnimationPlayer
+ColorRect
+Sprite2D
+Label
+DirectionalLight3D
+Camera3D
+SubViewport
+WorldEnvironment
+SubViewportContainer
+Camera2D
+Button
+AnimationTree

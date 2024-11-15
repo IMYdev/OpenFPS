@@ -53,7 +53,3 @@ func _physics_process(delta):
 	main.idle()
 	
 	
-
-
-
-

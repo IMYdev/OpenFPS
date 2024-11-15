@@ -1,0 +1,7 @@
+res://node_3d.tscn
+res://HUD.tscn
+res://UI.tscn
+res://assets/the_tablet.tscn
+res://nukeui.tscn
+res://circleHUD.gd
+res://functions/main.gd
